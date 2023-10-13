@@ -18,6 +18,7 @@ public class ClickPositionManager1 : MonoBehaviour
 {
 
     public Vector3 clickPosition;
+    public GameObject myPrefab; //object we will be working with
     public float distance = 3f; //make public so can edit in Unity
     public float distanceChange = 1f; //
 
@@ -39,9 +40,14 @@ public class ClickPositionManager1 : MonoBehaviour
 
             Debug.Log(clickPosition);
 
-            //create new sphere at the position you clicked
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.position = clickPosition;
+             //create new sphere at the position you clicked
+            //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //sphere.transform.position = clickPosition;
+ 
+            Instantiate(myPrefab, clickPosition, Quaternion.identity);
+
+            ///quaternion is for rotation of vectors
+            ///.identity is 0 rotation
              
 
 
